@@ -1,3 +1,4 @@
+import 'package:condominiosrd/src/bloc/loginBloc.dart';
 import 'package:condominiosrd/src/routers/appRouter.dart';
 // import 'package:condominiosrd/src/services/app_services.dart';
 // import 'package:condominiosrd/src/services/authServices.dart';
@@ -48,18 +49,23 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Builder(
-      builder: (context) {
-        final GoRouter goRouter = RouterGO().router;
-        return MaterialApp.router(
-          title: 'Condominios RD',
-          routeInformationParser: goRouter.routeInformationParser,
-          routeInformationProvider: goRouter.routeInformationProvider,
-          routerDelegate: goRouter.routerDelegate,
-          theme: ThemeData(backgroundColor: Colors.grey.shade200, scaffoldBackgroundColor: Colors.grey.shade300, textTheme: GoogleFonts.poppinsTextTheme()),
-        );
-      },
-    );
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => LoginBloc()),
+        ],
+        child: Builder(
+          builder: (context) {
+            final GoRouter goRouter = RouterGO().router;
+            return MaterialApp.router(
+              debugShowCheckedModeBanner: false,
+              title: 'Condominios RD',
+              routeInformationParser: goRouter.routeInformationParser,
+              routeInformationProvider: goRouter.routeInformationProvider,
+              routerDelegate: goRouter.routerDelegate,
+              theme: ThemeData(backgroundColor: Colors.grey.shade200, scaffoldBackgroundColor: Colors.grey.shade300, textTheme: GoogleFonts.poppinsTextTheme()),
+            );
+          },
+        ));
   }
 }
 
