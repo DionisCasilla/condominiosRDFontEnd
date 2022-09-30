@@ -106,10 +106,10 @@ class LoginPage extends StatelessWidget {
                               // ),
                               ElevatedButton(
                                   onPressed: () async {
-                                    await Provider.of<LoginBloc>(context, listen: false).loginUser();
-                                    if (Provider.of<LoginBloc>(context, listen: false).isLogin) {
-                                      GoRouter.of(context).go("/home");
-                                    }
+                                    // await Provider.of<LoginBloc>(context, listen: false).loginUser();
+                                    // if (Provider.of<LoginBloc>(context, listen: false).isLogin) {
+                                    GoRouter.of(context).go("/home");
+                                    //  }
                                     //context.go('/home');
                                     // context.go('/registro', extra: []);;
                                   },

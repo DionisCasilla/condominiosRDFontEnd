@@ -2,9 +2,7 @@ import 'package:condominiosrd/src/pantallas/accesos/index.dart';
 import 'package:condominiosrd/src/pantallas/genericos/logo.dart';
 import 'package:condominiosrd/src/pantallas/genericos/menu_option_sidebar.dart';
 import 'package:condominiosrd/src/pantallas/genericos/usuario_sidebar.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:go_router/go_router.dart';
 
 class Sidebar extends StatelessWidget {
   const Sidebar({Key? key}) : super(key: key);
@@ -49,6 +47,17 @@ class Sidebar extends StatelessWidget {
                 hasChildrens: false,
                 onClick: () {
                   print("object");
+                }),
+            MenuOptionSidebar(
+                imageIcono: Icon(
+                  FontAwesomeIcons.gauge,
+                  color: Colors.grey.shade400,
+                  size: 20,
+                ),
+                menu: "Registro",
+                hasChildrens: false,
+                onClick: () {
+                  GoRouter.of(context).go("/registro");
                 })
           ],
         ),

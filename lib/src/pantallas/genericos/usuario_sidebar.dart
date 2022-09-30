@@ -11,9 +11,13 @@ class UsuarioSidebar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          CircleAvatar(
-            backgroundColor: Colors.white,
-            child: Icon(FontAwesomeIcons.user),
+          SizedBox(
+            width: 28,
+            height: 28,
+            child: CircleAvatar(
+              backgroundColor: Colors.white,
+              child: Icon(FontAwesomeIcons.user, size: 16),
+            ),
           ),
           SizedBox(
             width: 10,
